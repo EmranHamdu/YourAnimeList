@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <section class="wrap">
+                 
+        <h1>Animes</h1>
+        @foreach (Anime item in Model)
+        {
+            <div class="animeBox">
+                <h3>@item.AnimeName</h3>
+                <div><img src="~/images/@item.AnimeURL"/></div>
+            </div>
+        }
+    </section>
