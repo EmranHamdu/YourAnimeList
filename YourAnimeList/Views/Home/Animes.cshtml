@@ -5,11 +5,20 @@
     <section class="wrap">
                  
         <h1>Animes</h1>
-        @foreach (Anime item in Model)
-        {
-            <div class="animeBox">
-                <h3>@item.AnimeName</h3>
-                <div><img src="~/images/@item.AnimeURL"/></div>
+        
+            <div class="container">
+                <div class="row">
+                    @foreach (Anime item in Model)
+                    {
+                        <div class="col-sm m-2">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5>@item.AnimeName</h5>
+                                    <div><img src="~/images/@item.AnimeURL" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
             </div>
-        }
     </section>
