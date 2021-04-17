@@ -4,12 +4,36 @@
     --delete-colour: #D93030;
 }
 
-body {
-    font-family:Arial;
+.wrap h1 {
+    text-align:center;
 }
 
-.Animebox {
-    font-family:Arial;
-    margin: 10%;
-    display: inline-block;
+.wrap {
+    font-family: 'Times New Roman', Times, serif;
+    color:darkgray;
 }
+
+.row {
+    justify-content:center;
+}
+
+.card {
+    border: none;
+}
+
+.card-body {
+    text-align: center;
+    background-color: rgba(18,18,18, 0.95) ;
+    color: darkgray;
+}
+
+.AnimeBox {
+   
+}
+
+body {
+    font-family: Arial;
+    color: darkgray;
+    background-color: #121212;
+}
+

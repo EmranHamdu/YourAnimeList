@@ -10,11 +10,13 @@
                 <div class="row">
                     @foreach (Anime item in Model)
                     {
-                        <div class="col-sm m-2">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5>@item.AnimeName</h5>
-                                    <div><img src="~/images/@item.AnimeURL" /></div>
+                        <div class="Animebox">
+                            <div class="col-sm m-2">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="title">@item.AnimeName</h5>
+                                        <div class="animeImg"><img src="~/images/@item.AnimeURL" /></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
