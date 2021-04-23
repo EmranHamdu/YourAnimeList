@@ -4,17 +4,13 @@
     --delete-colour: #D93030;
 }
 
-.wrap h1 {
-    text-align:center;
+.container row {
+    justify-content: center;
 }
 
 .wrap {
-    font-family: 'Times New Roman', Times, serif;
     color:darkgray;
-}
-
-.row {
-    justify-content:center;
+    text-align: center;
 }
 
 .card {
@@ -27,13 +23,21 @@
     color: darkgray;
 }
 
-.AnimeBox {
-   
+div.title {
+    font-size: medium;
+}
+
+.table tbody tr td {
+    color: whitesmoke;
+}
+
+.table thead tr th {
+    color: whitesmoke;
 }
 
 body {
     font-family: Arial;
-    color: darkgray;
+    color: whitesmoke;
     background-color: #121212;
 }
 

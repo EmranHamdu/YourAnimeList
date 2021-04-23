@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Anime>
+
+    <div class="container p-3">
+        <div class="row pt-4">
+            <div class="col-6">
+                <h2 class="text-light">Anime List</h2>
+            </div>
+            <div class="col-6 text-right">
+                <a asp-controller="CMS" asp-action="CreateAnime" class="btn btn-secondary">Add New Anime</a>
+            </div>
+        </div>
+
+        <br /><br />
+
+        @if(Model.Count() > 0)
+        {
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            Name
+                        </th>
+                        <th>
+                            Genere
+                        </th>
+                        <th>
+                            Description
+                        </th>
+                        <th>
+                            Date
+                        </th>
+                        <th>
+                            Studio
+                        </th>
+                        <th>
+                            Ratings
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var obj in Model)
+                    {
+                    <tr>
+                        <td width="15%">@obj.AnimeName</td>
+                        <td width="10%">@obj.AnimeGenere</td>
+                        <td width="40%">@obj.AnimeDescription</td>
+                        <td width="15%">@obj.AnimeReleaseDate</td>
+                        <td width="15%">@obj.AnimeStudio</td>
+                        <td width="5%">@obj.AnimeRating</td>
+                        <td></td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        }
+
+        else
+        {
+            <p>No item found.</p>
+        }
+
+    </div>
