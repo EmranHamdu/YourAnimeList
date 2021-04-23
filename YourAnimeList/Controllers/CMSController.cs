@@ -38,9 +38,76 @@ namespace YourAnimeList.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult CreateAnime(Anime obj)
         {
-            _context.Animes.Add(obj);
-            _context.SaveChanges();
-            return RedirectToAction("AddAnime");
+            if(ModelState.IsValid)
+            {
+                _context.Animes.Add(obj);
+                _context.SaveChanges();
+                return RedirectToAction("AddAnime");
+            }
+
+            return View(obj);
+        }
+
+        public IActionResult Edit(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+
+            var obj = _context.Animes.Find(id);
+            if(obj == null)
+            {
+                return NotFound();
+            }
+
+            return View(obj);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(Anime obj)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Animes.Update(obj);
+                _context.SaveChanges();
+                return RedirectToAction("AddAnime");
+            }
+
+            return View(obj);
+        }
+
+        public IActionResult Delete(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+
+            var obj = _context.Animes.Find(id);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+            return View(obj);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeletePost(int? id)
+        {
+
+            var obj = _context.Animes.Find(id);
+
+            if(obj == null)
+            {
+                return NotFound();
+            }
+                _context.Animes.Remove(obj);
+                _context.SaveChanges();
+                return RedirectToAction("AddAnime");
         }
     }
 }

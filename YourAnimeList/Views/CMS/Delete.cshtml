@@ -1,11 +1,11 @@
 ﻿@model Anime
 
-<form method="post" asp-action="CreateAnime">
-
+<form method="post" asp-action="DeletePost">
+    <input asp-for="ID" hidden />
     <div class="border p-3">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        
         <div class="form-group row">
-            <h2 class="text-info pl-3">Add Anime</h2>
+            <h2 class="text-info pl-3">Delete Anime</h2>
         </div>
         <div class="row">
             <div class="col-8">
@@ -14,8 +14,7 @@
                         <label asp-for="AnimeName"></label>
                     </div>
                     <div class="col-8">
-                        <input asp-for="AnimeName" class="form-control" />
-                        <span asp-validation-for="AnimeName" class="text-danger"></span>
+                        <input asp-for="AnimeName" disabled class="form-control" />
                     </div>
 
                 </div>
@@ -24,17 +23,15 @@
                         <label asp-for="AnimeGenere"></label>
                     </div>
                     <div class="col-8">
-                        <input asp-for="AnimeGenere" class="form-control" />
-                        <span asp-validation-for="AnimeGenere" class="text-danger"></span>
+                        <input asp-for="AnimeGenere" disabled class="form-control" />
                     </div>
-                    </div>
+                </div>
                 <div class="form-group row">
                     <div class="col-4">
                         <label asp-for="AnimeDescription"></label>
                     </div>
                     <div class="col-8">
-                        <input asp-for="AnimeDescription" class="form-control" />
-                        <span asp-validation-for="AnimeDescription" class="text-danger"></span>
+                        <input asp-for="AnimeDescription" disabled class="form-control" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -42,8 +39,7 @@
                         <label asp-for="AnimeReleaseDate"></label>
                     </div>
                     <div class="col-8">
-                        <input asp-for="AnimeReleaseDate" class="form-control" />
-                        <span asp-validation-for="AnimeReleaseDate" class="text-danger"></span>
+                        <input asp-for="AnimeReleaseDate" disabled class="form-control" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -51,8 +47,7 @@
                         <label asp-for="AnimeStudio"></label>
                     </div>
                     <div class="col-8">
-                        <input asp-for="AnimeStudio" class="form-control" />
-                        <span asp-validation-for="AnimeStudio" class="text-danger"></span>
+                        <input asp-for="AnimeStudio" disabled class="form-control" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -60,8 +55,7 @@
                         <label asp-for="AnimeEpisodes"></label>
                     </div>
                     <div class="col-8">
-                        <input asp-for="AnimeEpisodes" class="form-control" />
-                        <span asp-validation-for="AnimeEpisodes" class="text-danger"></span>
+                        <input asp-for="AnimeEpisodes" disabled class="form-control" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -69,8 +63,7 @@
                         <label asp-for="AnimeRating"></label>
                     </div>
                     <div class="col-8">
-                        <input asp-for="AnimeRating" class="form-control" />
-                        <span asp-validation-for="AnimeRating" class="text-danger"></span>
+                        <input asp-for="AnimeRating" disabled class="form-control" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -78,15 +71,14 @@
                         <label asp-for="AnimeURL"></label>
                     </div>
                     <div class="col-8">
-                        <input asp-for="AnimeURL" class="form-control" />
-                        <span asp-validation-for="AnimeURL" class="text-danger"></span>
+                        <input asp-for="AnimeURL" disabled class="form-control" />
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <div class="col-8 offset-4 row">
                         <div class="col">
-                            <input type="submit" class="btn btn-info w-100" value="Create" />
+                            <input type="submit" class="btn btn-danger w-100" value="Delete" />
                         </div>
                         <div>
                             <a asp-action="AddAnime" class="btn btn-success w-100">Back</a>
