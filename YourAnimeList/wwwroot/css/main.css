@@ -4,6 +4,11 @@
     --delete-colour: #D93030;
 }
 
+.homepage h1 {
+    text-align: center;
+    margin-top: 10%;
+}
+
 .container row {
     justify-content: center;
 }

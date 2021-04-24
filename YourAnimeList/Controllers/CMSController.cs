@@ -5,10 +5,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 using YourAnimeList.Models;
 
 namespace YourAnimeList.Controllers
 {
+    [Authorize(Roles = "Manager")]
     public class CMSController : Controller
     {
 
