@@ -103,7 +103,7 @@ namespace YourAnimeList.Controllers
         public IActionResult SignOut()
         {
             signinManager.SignOutAsync().Wait();
-            return RedirectToAction("SignIn", "Security");
+            return RedirectToAction("Animes", "Home");
         }
     }
 }

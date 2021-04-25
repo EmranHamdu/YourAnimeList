@@ -40,6 +40,10 @@ div.title {
     color: whitesmoke;
 }
 
+.loing-container {
+    justify-content:center;
+}
+
 body {
     font-family: Arial;
     color: whitesmoke;

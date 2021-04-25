@@ -33,6 +33,18 @@ namespace YourAnimeList.Controllers
             return View(model);
         }
 
+        public IActionResult AnimeDetails(int id)
+        {
+            Anime model = _context.Animes.Find(id);
+
+            if (model == null)
+            {
+                return NotFound();
+            }
+
+            return View(model);
+        }
+
         public IActionResult YourList()
         {
             return View();

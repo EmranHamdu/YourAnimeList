@@ -2,21 +2,27 @@
 
 <section>
     <form asp-controller="Security" asp-action="SignIn" method="post">
-        <div>
-            <label asp-for="UserName"></label>
-            <input type="text" asp-for="UserName" />
-        </div>
-        <div>
-            <label asp-for="Password"></label>
-            <input type="password" asp-for="Password" />
-        </div>
-        <div>
-            <label asp-for="RememberMe"></label>
-            <input type="checkbox" asp-for="RememberMe" />
-        </div>
-        <div>
-            <button type="submit" class="add">Sign In</button>
-        </div>
+        <table>
+            <tr>
+                <td><label asp-for="UserName"></label></td>
+                <td><input type="text" asp-for="UserName" /></td>
+            </tr>
+            <tr>
+                <td><label asp-for="Password"></label></td>
+                <td><input type="password" asp-for="Password"/></td>
+            </tr>
+            <tr>
+                <td><label asp-for="RememberMe"></label></td>
+                <td><input type="checkbox" asp-for="RememberMe" /></td>
+
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit" class="btn btn-outline-info">Sign In</button>
+                </td>
+            </tr>
+        </table>
+        
         <div asp-validation-summary="All" class="message"></div>
 
         <div class="col-6">

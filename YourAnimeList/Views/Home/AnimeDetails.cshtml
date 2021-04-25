@@ -1,0 +1,25 @@
+﻿@model YourAnimeList.Models.Anime
+@{
+
+    ViewData["Title"] = @Model.AnimeName;
+    ViewData["PageHeading"] = @Model.AnimeName;
+
+}
+    <section>
+
+        <div class="mainImage">
+            <img src="~/images/@Model.AnimeURL" alt="@Model.AnimeName" />
+        </div>
+
+        <div class="filmInfo">
+            <h2>@Model.AnimeName</h2>
+            <p>Genere: @Model.AnimeGenere</p>
+            <p>Number of Episodes: @Model.AnimeEpisodes</p>
+            <p>Description: @Model.AnimeDescription</p>
+            <p>Relaese Date: @Model.AnimeReleaseDate</p>
+            <p>Studio: @Model.AnimeStudio</p>
+            <p>Rating: @Model.AnimeRating</p>
+
+        </div>
+
+    </section>

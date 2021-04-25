@@ -27,15 +27,7 @@
                             Description
                         </th>
                         <th>
-                            Date
                         </th>
-                        <th>
-                            Studio
-                        </th>
-                        <th>
-                            Ratings
-                        </th>
-                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,10 +36,7 @@
                     <tr>
                         <td width="15%">@obj.AnimeName</td>
                         <td width="10%">@obj.AnimeGenere</td>
-                        <td width="30%">@obj.AnimeDescription</td>
-                        <td width="15%">@obj.AnimeReleaseDate</td>
-                        <td width="15%">@obj.AnimeStudio</td>
-                        <td width="5%">@obj.AnimeRating</td>
+                        <td width="65%">@obj.AnimeDescription</td>
                         <td class="text-center">
                             <div class="w-100 btn-group" role="group">
                                 <a asp-controller="CMS" asp-route-ID="@obj.ID" asp-action="Edit" class="btn btn-info mx-2">Edit</a>
