@@ -1,34 +1,28 @@
 ﻿@model SignIn
 
-<section>
-    <form asp-controller="Security" asp-action="SignIn" method="post">
-        <table>
-            <tr>
-                <td><label asp-for="UserName"></label></td>
-                <td><input type="text" asp-for="UserName" /></td>
-            </tr>
-            <tr>
-                <td><label asp-for="Password"></label></td>
-                <td><input type="password" asp-for="Password"/></td>
-            </tr>
-            <tr>
-                <td><label asp-for="RememberMe"></label></td>
-                <td><input type="checkbox" asp-for="RememberMe" /></td>
+    <section>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form asp-controller="Security" asp-action="SignIn" method="post">
+            <table>
+                <tr>
+                    <td><label asp-for="UserName"></label></td>
+                    <td><input type="text" asp-for="UserName" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="Password"></label></td>
+                    <td><input type="password" asp-for="Password" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="RememberMe"></label></td>
+                    <td><input type="checkbox" asp-for="RememberMe" /></td>
 
-            </tr>
-            <tr>
-                <td>
-                    <button type="submit" class="btn btn-outline-info">Sign In</button>
-                </td>
-            </tr>
-        </table>
-        
-        <div asp-validation-summary="All" class="message"></div>
-
-        <div class="col-6">
-            <a asp-controller="security" asp-action="register" class="btn btn-secondary">Register</a>
-        </div>
-
-    </form>
-</section>
-
+                </tr>
+                <tr>
+                    <td class="align-content-center">
+                        <button type="submit" class="btn btn-outline-info">Sign In</button>
+                        <a asp-controller="security" asp-action="register" class="btn btn-outline-info">Register</a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </section>

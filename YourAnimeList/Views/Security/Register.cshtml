@@ -2,6 +2,7 @@
 
 <div class="login-container"
     <h2>Create New User Account</h2>
+    <div asp-validation-summary="ModelOnly" class="message"></div>
     <form method="post">
         <table>
             <tr>
@@ -20,16 +21,13 @@
                 <td><label asp-for="Email"></label></td>
                 <td><input type="text" asp-for="Email" /></td>
             </tr>
+
             <tr>
-                <td colspan="2">
-                    <button type="submit" class="">Create</button>
+                <td class="align-content-center">
+                    <button type="submit" class="btn btn-outline-info">Create</button>
+                    <a asp-controller="security" asp-action="signin" class="btn btn-outline-info">Sign-in</a>
                 </td>
             </tr>
         </table>
-        <div asp-validation-summary="All" class="message"></div>
-
-        <div class="col-6">
-            <a asp-controller="security" asp-action="signin" class="btn btn-secondary">Sign-in</a>
-        </div>
     </form>
  </div>

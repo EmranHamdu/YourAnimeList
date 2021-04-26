@@ -20,6 +20,7 @@
 
 .card {
     border: none;
+    width: 18rem;
 }
 
 .card-body {
@@ -44,9 +45,22 @@ div.title {
     justify-content:center;
 }
 
+.searches {
+    justify-content:center;
+}
+
+.searches p a {
+    text-align:center;
+}
+
+.searches animeImg img {
+    justify-content: center;
+}
+
 body {
     font-family: Arial;
     color: whitesmoke;
     background-color: #121212;
 }
+
 

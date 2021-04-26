@@ -15,7 +15,11 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="title">@item.AnimeName</div>
-                                        <div class="animeImg"><img src="~/images/@item.AnimeURL"/></div>
+                                        <div class="animeImg">
+                                            <a asp-controller="Home" asp-action="AnimeDetails" asp-route-id="@item.ID">
+                                                <img src="~/images/@item.AnimeURL" />
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

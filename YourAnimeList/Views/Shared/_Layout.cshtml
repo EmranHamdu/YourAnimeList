@@ -4,11 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]YourAnimeList</title>
+    
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/main.css" />
 </head>
 <body>
-
     <nav class="navbar navbar-dark bg-dark navbar-expand-sm navbar-toggleable-sm mb-3">
         <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
             <ul class="navbar-nav flex-grow-1">
@@ -26,17 +26,34 @@
                 </li>
             </ul>
         </div>
-    </nav>
+        <form asp-action="Search" method="get" class="form-inline">
+            <input class="form-control mr-sm-2" type="search" name="SearchString" id="SearchString" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="form-inline">
+                <p>@User.Identity.Name</p>
+                <form asp-controller="Security" asp-action="SignOut" method="post">
+                    <button type="submit" class="btn btn-outline-info">Sign Out</button>
+                </form>
+            </div>
+        }
 
-    @if (User.Identity.IsAuthenticated)
-    {
-        <div class="login">
-            <p>Welcome @User.Identity.Name</p>
-            <form asp-controller="Security" asp-action="SignOut" method="post">
-                <button type="submit" class="btn btn-outline-info">Sign Out</button>
-            </form>
-        </div>
-    }
+        else
+        {
+            <div class="form-inline mx-1">
+                <form asp-controller="Security" asp-action="SignIn">
+                    <button type="submit" class="btn btn-outline-info">Sign In</button>
+                </form>
+            </div>
+            <div class="form-inline mx-1">
+                <form asp-controller="Security" asp-action="Register">
+                    <button type="submit" class="btn btn-outline-info">Register</button>
+                </form>
+            </div>
+        }
+    </nav>
 
     @RenderBody()
 

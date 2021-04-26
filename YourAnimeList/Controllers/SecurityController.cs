@@ -41,7 +41,7 @@ namespace YourAnimeList.Controllers
                 if (!roleManager.RoleExistsAsync("Manager").Result)
                 {
                     AppIdentityRole role = new AppIdentityRole();
-                    role.Name = "Manager";
+                    role.Name = "Mangager";
                     IdentityResult roleResult = roleManager.
                     CreateAsync(role).Result;
                 }

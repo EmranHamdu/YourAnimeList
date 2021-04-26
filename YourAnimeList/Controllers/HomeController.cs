@@ -45,6 +45,23 @@ namespace YourAnimeList.Controllers
             return View(model);
         }
 
+        public IActionResult Search(String SearchString)
+        {
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                var animes = from a in _context.Animes
+                            where a.AnimeName.Contains(SearchString)
+                            select a;
+                List<Anime> model = animes.ToList();
+                ViewData["SearchString"] = SearchString;
+                return View(model);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+
         public IActionResult YourList()
         {
             return View();
