@@ -1,10 +1,4 @@
-﻿﻿:root {
-    --add-colour: #6FDC7B;
-    --edit-colour: #F2A038;
-    --delete-colour: #D93030;
-}
-
-.homepage h1 {
+﻿.homepage h1 {
     text-align: center;
     margin-top: 10%;
 }
@@ -14,7 +8,6 @@
 }
 
 .wrap {
-    color:darkgray;
     text-align: center;
 }
 
@@ -31,14 +24,6 @@
 
 div.title {
     font-size: medium;
-}
-
-.table tbody tr td {
-    color: whitesmoke;
-}
-
-.table thead tr th {
-    color: whitesmoke;
 }
 
 .loing-container {
@@ -59,8 +44,6 @@ div.title {
 
 body {
     font-family: Arial;
-    color: whitesmoke;
-    background-color: #121212;
 }
 
 

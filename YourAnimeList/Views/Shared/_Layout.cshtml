@@ -9,58 +9,56 @@
     <link rel="stylesheet" href="~/css/main.css" />
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark navbar-expand-sm navbar-toggleable-sm mb-3">
-        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-            <ul class="navbar-nav flex-grow-1">
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Animes">Anime</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="YourList">Your List</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="CMS" asp-action="AddAnime">Add Anime</a>
-                </li>
-            </ul>
-        </div>
-        <form asp-action="Search" method="get" class="form-inline">
-            <input class="form-control mr-sm-2" type="search" name="SearchString" id="SearchString" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        @if (User.Identity.IsAuthenticated)
-        {
-            <div class="form-inline">
-                <p>@User.Identity.Name</p>
-                <form asp-controller="Security" asp-action="SignOut" method="post">
-                    <button type="submit" class="btn btn-outline-info">Sign Out</button>
+        <nav class="navbar navbar-dark bg-dark navbar-expand-sm navbar-toggleable-sm mb-3">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Animes">Anime</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="YourList">Your List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="CMS" asp-action="AddAnime">Add Anime</a>
+                    </li>
+                </ul>
+                <form asp-action="Search" method="get" class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" name="SearchString" id="SearchString" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
                 </form>
-            </div>
-        }
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="form-inline">
+                        <form asp-controller="Security" asp-action="SignOut" method="post">
+                            <button type="submit" class="btn btn-outline-info">Sign Out</button>
+                        </form>
+                    </div>
+                }
 
-        else
-        {
-            <div class="form-inline mx-1">
-                <form asp-controller="Security" asp-action="SignIn">
-                    <button type="submit" class="btn btn-outline-info">Sign In</button>
-                </form>
+                else
+                {
+                    <div class="form-inline mx-1">
+                        <form asp-controller="Security" asp-action="SignIn">
+                            <button type="submit" class="btn btn-outline-info">Sign In</button>
+                        </form>
+                    </div>
+                }
             </div>
-            <div class="form-inline mx-1">
-                <form asp-controller="Security" asp-action="Register">
-                    <button type="submit" class="btn btn-outline-info">Register</button>
-                </form>
-            </div>
-        }
-    </nav>
+        </nav>
 
-    @RenderBody()
+        @RenderBody()
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @RenderSection("Scripts", required: false)
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+        @RenderSection("Scripts", required: false)
 
 </body>
 </html>
