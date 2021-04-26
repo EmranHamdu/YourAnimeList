@@ -4,9 +4,9 @@
     left: '32px',
     time: '0.5s',
     //mixColor: '#fff',
-    backgroundColor: '#121212',
-    buttonColorDark: '#whitesmoke',
-    buttonColorLight: '#121212',
+    backgroundColor: '#whitesmoke',
+    buttonColorDark: '#121212',
+    buttonColorLight: '#whitesmoke',
     saveInCookies: false,
     label: '🌓',
     autoMatchOsTheme: true
