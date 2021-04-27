@@ -1,4 +1,6 @@
-﻿.homepage h1 {
+﻿@import url(https://fonts.googleapis.com/css?family=Comfortaa|Manjari|Montserrat|Roboto|Merienda+One&display=swap);
+
+.homepage h1 {
     text-align: center;
     margin-top: 10%;
 }
@@ -22,31 +24,15 @@
     color: darkgray;
 }
 
-div.title {
+.title {
     font-size: medium;
-}
-
-.loing-container {
-    justify-content:center;
-}
-
-.searches {
-    justify-content:center;
-}
-
-.searches p a {
-    text-align:center;
-}
-
-.searches animeImg img {
-    justify-content: center;
 }
 
 .form-container {
     position: absolute;
     top: 15vh;
-    background: rgba(18,18,18, 0.95);
     padding: 30px;
+    background: rgba(18,18,18, 0.95);
     border-radius: 10px;
     color: whitesmoke;
 }
@@ -54,14 +40,33 @@ div.title {
 .animeResult {
     position:absolute;
     padding: 15px;
-
 }
 
 .animeLink {
     text-decoration: none;
     transition: 0.2s;
-    color: whitesmoke;
+    color:darkgray;
+}
 
+.anime-des {
+    display:flex;
+}
+
+.anime-img {
+    display: inline-flex;
+}
+
+.anime-info-parent {
+    display: inline-flex;
+}
+
+.anime-info {
+    display: inline-block;
+}
+
+.animeResult {
+    position:absolute;
+    padding: 15px;
 }
 
 .animeLink:hover {
@@ -69,8 +74,11 @@ div.title {
     transition: 0.2s;
 }
 
-body {
-    font-family: Arial;
+.car-container {
+    max-height:50vh;
 }
 
-
+body {
+    font-family: 'Merienda One', sans-serif;
+    color: darkgray;
+}

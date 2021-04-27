@@ -5,21 +5,32 @@
     ViewData["PageHeading"] = @Model.AnimeName;
 
 }
-    <section>
-        <div class="animeDes"
-            <h2>@Model.AnimeName</h2>
-            <div class="mainImage">
-                <img src="~/images/@Model.AnimeURL" alt="@Model.AnimeName" />
-            </div>
 
-            <div class="AnimeInfo">
-                <p>Genere: @Model.AnimeGenere</p>
-                <p>Number of Episodes: @Model.AnimeEpisodes</p>
-                <p>Description: @Model.AnimeDescription</p>
-                <p>Relaese Date: @Model.AnimeReleaseDate</p>
-                <p>Studio: @Model.AnimeStudio</p>
-                <p>Rating: @Model.AnimeRating</p>
+<section class="container justify-content-center">
+    <div class="border p-3">
+        <div class="row">
+            <div class="col-sm-10 m-2 anime-des">
+                <div class="anime-img">
+                    <img src="~/images/@Model.AnimeURL" class="det-img" alt="@Model.AnimeName" />
+                </div>
+                <div class="anime-info-parent p-2 ">
+                    <div class="anime-info">
+                        <h2 class="det-head">@Model.AnimeName</h2>
+                        <p>Genere: @Model.AnimeGenere</p>
+                        <p>Number of Episodes: @Model.AnimeEpisodes</p>
+                        <p>Description: @Model.AnimeDescription</p>
+                        <p>Relaese Date: @Model.AnimeReleaseDate</p>
+                        <p>Studio: @Model.AnimeStudio</p>
+                        <p>Rating: @Model.AnimeRating</p>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+</section>
+
+
+    <section class="container-fluid justify-content-center">
+            
 
     </section>
