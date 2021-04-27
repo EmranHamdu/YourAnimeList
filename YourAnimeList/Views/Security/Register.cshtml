@@ -1,33 +1,30 @@
 ﻿@model Register
 
-<div class="login-container"
-    <h2>Create New User Account</h2>
-    <div asp-validation-summary="ModelOnly" class="message"></div>
-    <form method="post">
-        <table>
-            <tr>
-                <td><label asp-for="UserName"></label></td>
-                <td><input type="text" asp-for="UserName" /></td>
-            </tr>
-            <tr>
-                <td><label asp-for="Password"></label></td>
-                <td><input type="password" asp-for="Password" /></td>
-            </tr>
-            <tr>
-                <td><label asp-for="ConfirmPassword"></label></td>
-                <td><input type="password" asp-for="ConfirmPassword" /></td>
-            </tr>
-            <tr>
-                <td><label asp-for="Email"></label></td>
-                <td><input type="text" asp-for="Email" /></td>
-            </tr>
-
-            <tr>
-                <td class="align-content-center">
-                    <button type="submit" class="btn btn-outline-info">Create</button>
-                    <a asp-controller="security" asp-action="signin" class="btn btn-outline-info">Sign-in</a>
-                </td>
-            </tr>
-        </table>
-    </form>
- </div>
+    <section class="container-fluid">
+        <div class="row justify-content-center">
+            <section class="col-12 col-sm-6 col-md-3">
+                <form asp-controller="Security" asp-action="SignIn" method="post" class="form-container">
+                    <div class="form-group">
+                        <label asp-for="UserName"></label>
+                        <input type="text" asp-for="UserName" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password"></label>
+                        <input type="password" asp-for="Password" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ConfirmPassword"></label>
+                        <input type="password" asp-for="ConfirmPassword" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email"></label>
+                        <input input type="text" asp-for="Email"  class="form-control" />
+                    </div>
+                    <div class="btn-group btn-block" role="group">
+                        <button type="submit" class="btn btn-outline-info">Sign In</button>
+                        <button asp-controller="security" asp-action="register" class="btn btn-outline-info">Register</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </section>

@@ -1,24 +1,28 @@
 ﻿@{
-    ViewData["Title"] = "Search An Anime";
+    ViewData["Title"] = "Search Anime";
 }
-    <section>
-        <div calss="searches">
-            @if (ViewData["SearchString"] != null && (string)ViewData["SearchString"] != String.Empty)
-            {
-                @foreach (Anime item in Model)
-                {
-                    <p><a asp-controller="Home" asp-action="AnimeDetails" asp-route-id="@item.ID">@item.AnimeName</a></p>
-                    <div class="animeImg">
-                        <a asp-controller="Home" asp-action="AnimeDetails" asp-route-id="@item.ID">
-                            <img src="~/images/@item.AnimeURL" />
-                        </a>
-                    </div>
-                }
-                if (Model.Count == 0)
-                {
-                    <p>Sorry no matches.</p>
-                }
-            }
+    <section class="container-fluid">
+        <div calss="row justify-content-center">
+            <section class="col-12 col-sm-6 col-md-3">
+                <div class="animeResult py-2">
+                    @if (ViewData["SearchString"] != null && (string)ViewData["SearchString"] != String.Empty)
+                    {
+                        @foreach (Anime item in Model)
+                        {
+                            <p><a asp-controller="Home" asp-action="AnimeDetails" asp-route-id="@item.ID" class="animeLink">@item.AnimeName</a></p>
+                            <div class="animeImg">
+                                <a asp-controller="Home" asp-action="AnimeDetails" asp-route-id="@item.ID">
+                                    <img src="~/images/@item.AnimeURL" />
+                                </a>
+                            </div>
+                        }
+                        if (Model.Count == 0)
+                        {
+                            <p>Sorry no matches.</p>
+                        }
+                    }
+                </div>
+            </section>
         </div>
     </section>
 

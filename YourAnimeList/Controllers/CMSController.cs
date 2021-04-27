@@ -8,6 +8,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
 using YourAnimeList.Models;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
 
 namespace YourAnimeList.Controllers
 {
@@ -50,6 +52,28 @@ namespace YourAnimeList.Controllers
 
             return View(obj);
         }
+
+       /*private Tuple<string, string, long> UploadedFile(Anime obj)
+        {
+            string uniqueFileName = null;
+            string fileExtension = null;
+            long fileSize = 0;
+
+            if (obj.AnimeURL != null)
+            {
+                string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images");
+                fileExtension = Path.GetExtension(obj.AnimeURL.FileName);
+                fileExtension = fileExtension.ToLowerInvariant();
+                uniqueFileName = Guid.NewGuid().ToString() + fileExtension;
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    obj.AnimeURL.CopyTo(fileStream);
+                    fileSize = fileStream.Length;
+                }
+            }
+            return new Tuple<string, string, long>(uniqueFileName, fileExtension, fileSize);
+        }*/
 
         public IActionResult Edit(int? id)
         {

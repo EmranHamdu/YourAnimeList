@@ -82,8 +82,7 @@ namespace YourAnimeList.Controllers
             if (ModelState.IsValid)
             {
                 var result = signinManager.PasswordSignInAsync
-                (obj.UserName, obj.Password,
-                    obj.RememberMe, false).Result;
+                (obj.UserName, obj.Password, obj.RememberMe, false).Result;
 
                 if (result.Succeeded)
                 {
@@ -104,6 +103,13 @@ namespace YourAnimeList.Controllers
         {
             signinManager.SignOutAsync().Wait();
             return RedirectToAction("Animes", "Home");
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Manager")]
+        public IActionResult CreateRole()
+        {
+            return View();
         }
     }
 }

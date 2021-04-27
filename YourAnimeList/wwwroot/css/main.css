@@ -42,6 +42,33 @@ div.title {
     justify-content: center;
 }
 
+.form-container {
+    position: absolute;
+    top: 15vh;
+    background: rgba(18,18,18, 0.95);
+    padding: 30px;
+    border-radius: 10px;
+    color: whitesmoke;
+}
+
+.animeResult {
+    position:absolute;
+    padding: 15px;
+
+}
+
+.animeLink {
+    text-decoration: none;
+    transition: 0.2s;
+    color: whitesmoke;
+
+}
+
+.animeLink:hover {
+    color: #56F773;
+    transition: 0.2s;
+}
+
 body {
     font-family: Arial;
 }
