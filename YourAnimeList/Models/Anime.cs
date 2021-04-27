@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -33,8 +35,12 @@ namespace YourAnimeList.Models
         [DisplayName("Ratings")]
         [Required]
         public float AnimeRating { get; set; }
-        [DisplayName("Image Name.jpg")]
+        [DisplayName("Image Name")]
         [Required]
         public string AnimeURL { get; set; }
+
+        [NotMapped]
+        [DisplayName("Upload")]
+        public IFormFile ImageFile { get; set; }
     }
 }

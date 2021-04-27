@@ -16,14 +16,15 @@ namespace YourAnimeList.Controllers
     [Authorize(Roles = "Manager")]
     public class CMSController : Controller
     {
-
         private readonly ILogger<CMSController> _logger;
         private readonly ApplicationDbContext _context;
+        private readonly IWebHostEnvironment _hostEnviroment;
 
-        public CMSController(ILogger<CMSController> logger, ApplicationDbContext context)
+        public CMSController(ILogger<CMSController> logger, ApplicationDbContext context, IWebHostEnvironment hostEnviroment)
         {
             _logger = logger;
             _context = context;
+            this._hostEnviroment = hostEnviroment;
         }
 
         public IActionResult AddAnime()
@@ -41,10 +42,22 @@ namespace YourAnimeList.Controllers
         //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult CreateAnime(Anime obj)
+        public async Task<IActionResult> CreateAnimeAsync(Anime obj)
         {
             if(ModelState.IsValid)
             {
+                string wwwRootPath = _hostEnviroment.WebRootPath;
+                string fileName = Path.GetFileNameWithoutExtension(obj.ImageFile.FileName);
+                string extension = Path.GetExtension(obj.ImageFile.FileName);
+                obj.AnimeURL = fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+
+                string path = Path.Combine(wwwRootPath + "/images/", fileName);
+                using (var fileStram = new FileStream(path, FileMode.Create))
+                {
+                    await obj.ImageFile.CopyToAsync(fileStram);
+                }
+
+
                 _context.Animes.Add(obj);
                 _context.SaveChanges();
                 return RedirectToAction("AddAnime");
@@ -53,27 +66,6 @@ namespace YourAnimeList.Controllers
             return View(obj);
         }
 
-       /*private Tuple<string, string, long> UploadedFile(Anime obj)
-        {
-            string uniqueFileName = null;
-            string fileExtension = null;
-            long fileSize = 0;
-
-            if (obj.AnimeURL != null)
-            {
-                string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images");
-                fileExtension = Path.GetExtension(obj.AnimeURL.FileName);
-                fileExtension = fileExtension.ToLowerInvariant();
-                uniqueFileName = Guid.NewGuid().ToString() + fileExtension;
-                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
-                using (var fileStream = new FileStream(filePath, FileMode.Create))
-                {
-                    obj.AnimeURL.CopyTo(fileStream);
-                    fileSize = fileStream.Length;
-                }
-            }
-            return new Tuple<string, string, long>(uniqueFileName, fileExtension, fileSize);
-        }*/
 
         public IActionResult Edit(int? id)
         {
