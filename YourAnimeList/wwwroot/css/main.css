@@ -47,6 +47,10 @@
     color: whitesmoke;
 }
 
+.no-res {
+    color: whitesmoke;
+}
+
 .form-container {
     position: absolute;
     top: 15vh;
