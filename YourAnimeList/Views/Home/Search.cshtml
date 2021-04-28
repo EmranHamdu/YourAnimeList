@@ -1,34 +1,34 @@
 ﻿@{
     ViewData["Title"] = "Search Anime";
 }
-    <section class="container">
-        <div calss="row">
-            @if (ViewData["SearchString"] != null && (string)ViewData["SearchString"] != String.Empty)
+<section class="container">
+
+        @if (ViewData["SearchString"] != null && (string)ViewData["SearchString"] != String.Empty)
+        {
+    <div class="row">
+            @foreach (Anime item in Model)
             {
-                @foreach (Anime item in Model)
-                {
-                    <div class="Animebox">
-                        <div class="col-sm m-2 py-2">
-                            <div class="card search-parent">
-                                <div class="card-body searched-body">
-                                    <div class="searched-link">
-                                        <p><a asp-controller="Home" asp-action="AnimeDetails" asp-route-id="@item.ID" class="animeLink">@item.AnimeName</a></p>
-                                    </div>
-                                    <div class="searched-img">
-                                        <a asp-controller="Home" asp-action="AnimeDetails" asp-route-id="@item.ID">
-                                            <img src="~/images/@item.AnimeURL" />
-                                        </a>
-                                    </div>
+                
+                    <div class="col-sm-4 my-2">
+                        <div class="card">
+                            <div class="card-body searched-body">
+                                <div class="searched-link">
+                                    <p><a asp-controller="Home" asp-action="AnimeDetails" asp-route-id="@item.ID" class="animeLink">@item.AnimeName</a></p>
+                                </div>
+                                <div class="searched-img">
+                                    <a asp-controller="Home" asp-action="AnimeDetails" asp-route-id="@item.ID">
+                                        <img src="~/images/@item.AnimeURL" />
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                }
-                if (Model.Count == 0)
-                {
-                    <p>Sorry no matches.</p>
-                }
             }
-        </div>
-    </section>
+    </div>
+            if (Model.Count == 0)
+            {
+                <p>Sorry no matches.</p>
+            }
+        }
 
+</section>

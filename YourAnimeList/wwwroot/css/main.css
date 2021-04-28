@@ -17,7 +17,6 @@
     border: none;
     width: 18rem;
     min-height: 45vh;
-    border: none;
 }
 
 .card-body {
@@ -84,6 +83,10 @@
 .animeResult {
     position:absolute;
     padding: 15px;
+} 
+
+.container {
+    font-family: Arial;
 }
 
 .searched-img {
@@ -97,6 +100,9 @@
 .searched-img:hover {
     -webkit-transform: scale(1);
     transform: scale(1);
+}
+
+.anime-cards {
 }
 
 .animeImg {
@@ -116,17 +122,25 @@
     min-height:55%;
 }
 
-welcome-text {
+.homepage {
+    margin-top: 20%;
+}
+
+.home-head {
+   text-align: center;
+}
+
+.home-span {
     text-align: center;
 }
 
-#type-text {
-    justify-content: center;
+.span-align {
+    text-align: center;
 }
 
 .blinking-cursor {
     user-select: none;
-    animation: blink 1s steps(2, start) infinite
+    animation: blink 1s steps(2, start) infinite;
 }
 
 @keyframes blink {

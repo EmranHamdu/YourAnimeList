@@ -21,7 +21,7 @@ async function init() {
     while (true) {
         await node.type('Welcome, To Your Anime List!')
         await sleep(2000)
-        await node.delete('Welcome, To Your AnimeList!')
+        await node.delete('Welcome, To Your Anime List!')
         await node.type('Enjoy Your Stay.')
         await sleep(2000)
         await node.delete('Enjoy Your Stay.')
