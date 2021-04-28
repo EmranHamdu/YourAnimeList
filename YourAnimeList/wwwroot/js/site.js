@@ -1,4 +1,4 @@
-﻿const option = {
+﻿/*const option = {
     bottom: '64px',
     right: 'unset',
     left: '32px',
@@ -10,7 +10,7 @@
     saveInCookies: false,
     label: '🌓',
     autoMatchOsTheme: true
-}
+}*/
 
 async function init() {
     const node = document.querySelector("#type-text")

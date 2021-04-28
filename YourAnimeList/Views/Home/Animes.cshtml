@@ -4,14 +4,14 @@
 
     <section class="wrap">
                  
-        <h1>Animes</h1>
+        <h1 class="page-heading">Animes</h1>
         
             <div class="container">
-                <div class="row">
+                <div class="row justify-content-center">
                     @foreach (Anime item in Model)
                     {
                         <div class="Animebox">
-                            <div class="col-sm m-2">
+                            <div class="col-sm-6 m-2">
                                 <div class="card">
                                     <div class="card-body searched">
                                         <div class="title">
@@ -19,7 +19,7 @@
                                         </div>
                                         <div class="animeImg">
                                             <a asp-controller="Home" asp-action="AnimeDetails" asp-route-id="@item.ID">
-                                                <img src="~/images/@item.AnimeURL" class="index-img"/>
+                                                <img src="~/images/@item.AnimeURL" class="index-img" />
                                             </a>
                                         </div>
                                     </div>

@@ -16,18 +16,35 @@
 .card {
     border: none;
     width: 18rem;
+    background: none;
     min-height: 45vh;
 }
 
 .card-body {
     text-align: center;
-    background-color: rgba(18,18,18, 0.95);
-    color: darkgray;
+    background-color: rgba(18,18,18, 0.5);
+    color: whitesmoke;
     border: none;
 }
 
 .title {
     font-size: medium;
+}
+
+.add-title {
+    font-family: 'Merienda One', sans-serif;
+    color: black;
+    -webkit-text-stroke: 1px whitesmoke;
+}
+
+.table {
+    background-color: rgba(18,18,18, 0.5);
+    color:whitesmoke;
+}
+
+.edit-bg {
+    background-color: rgba(18,18,18, 0.5);
+    color: whitesmoke;
 }
 
 .form-container {
@@ -59,7 +76,8 @@
 .animeTitle {
     text-decoration: none;
     transition: 0.2s;
-    color: darkgray;
+    color: whitesmoke;
+    font-size: medium;
 }
 
 .animeTitle:hover {
@@ -102,7 +120,8 @@
     transform: scale(1);
 }
 
-.anime-cards {
+.searched-body {
+    min-height: 45vh;
 }
 
 .animeImg {
@@ -151,5 +170,10 @@
 
 body {
     font-family: 'Merienda One', sans-serif;
-    color: darkgray;
+    color: black;
+    background-image: url("../bannerImages/bg-img.jpg");
+    background-repeat:no-repeat;
+    background-attachment:fixed;
 }
+
+
