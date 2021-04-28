@@ -13,8 +13,10 @@
                         <div class="Animebox">
                             <div class="col-sm m-2">
                                 <div class="card">
-                                    <div class="card-body">
-                                        <div class="title">@item.AnimeName</div>
+                                    <div class="card-body searched">
+                                        <div class="title">
+                                            <p><a asp-controller="Home" asp-action="AnimeDetails" asp-route-id="@item.ID" class="animeTitle">@item.AnimeName</a></p>
+                                        </div>
                                         <div class="animeImg">
                                             <a asp-controller="Home" asp-action="AnimeDetails" asp-route-id="@item.ID">
                                                 <img src="~/images/@item.AnimeURL" class="index-img"/>

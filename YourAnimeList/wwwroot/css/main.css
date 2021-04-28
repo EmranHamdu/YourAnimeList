@@ -16,12 +16,15 @@
 .card {
     border: none;
     width: 18rem;
+    min-height: 45vh;
+    border: none;
 }
 
 .card-body {
     text-align: center;
-    background-color: rgba(18,18,18, 0.95) ;
+    background-color: rgba(18,18,18, 0.95);
     color: darkgray;
+    border: none;
 }
 
 .title {
@@ -48,8 +51,22 @@
     color:darkgray;
 }
 
-.anime-des {
-    display:flex;
+.animeLink:hover {
+    color: #56F773;
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+.animeTitle {
+    text-decoration: none;
+    transition: 0.2s;
+    color: darkgray;
+}
+
+.animeTitle:hover {
+    text-decoration: none;
+    transition: 0.2s;
+    color: #56F773;
 }
 
 .anime-img {
@@ -57,11 +74,11 @@
 }
 
 .anime-info-parent {
-    display: inline-flex;
+    display: inline;
 }
 
 .anime-info {
-    display: inline-block;
+    display: inline;
 }
 
 .animeResult {
@@ -69,13 +86,53 @@
     padding: 15px;
 }
 
-.animeLink:hover {
-    color: #56F773;
-    transition: 0.2s;
+.searched-img {
+    -webkit-transform: scale(1.02);
+    transform: scale(1.02);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    margin-top: 5px;
 }
 
-.car-container {
-    max-height:50vh;
+.searched-img:hover {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.animeImg {
+    -webkit-transform: scale(1.08);
+    transform: scale(1.08);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    margin-top: 5px;
+}
+
+.animeImg:hover {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.index-img{
+    min-height:55%;
+}
+
+welcome-text {
+    text-align: center;
+}
+
+#type-text {
+    justify-content: center;
+}
+
+.blinking-cursor {
+    user-select: none;
+    animation: blink 1s steps(2, start) infinite
+}
+
+@keyframes blink {
+    to {
+        visibility:hidden;
+    }
 }
 
 body {
